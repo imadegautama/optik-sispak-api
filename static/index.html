@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optic Care - Expert System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Optic Care</h2>
+        <p>Silakan pilih gejala yang Anda alami untuk analisis pakar.</p>
+      </div>
+
+      <div id="mainContent"></div>
+
+      <div class="action-area">
+        <button onclick="kirimData()">
+          <span>Mulai Analisis Medis</span>
+          <svg
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="loading-overlay">
+      <div class="spinner"></div>
+      <p style="margin-top: 15px; font-weight: 600">Menganalisis Gejala...</p>
+    </div>
+
+    <div class="modal-overlay" id="alertOverlay">
+      <div class="modal-content" style="max-width: 350px">
+        <div style="font-size: 40px; margin-bottom: 10px">ℹ️</div>
+        <h3>Informasi</h3>
+        <p id="alertMessage" style="color: var(--text-muted)"></p>
+        <button
+          onclick="closeAlert()"
+          style="padding: 12px 30px; font-size: 0.9rem"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-content">
+        <div class="result-badge">DIAGNOSIS SELESAI</div>
+        <h3 id="diag" style="font-size: 1.8rem; margin: 0 0 5px 0"></h3>
+        <p
+          id="confText"
+          style="
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+          "
+        ></p>
+        <div class="saran-card">
+          <strong style="font-size: 0.8rem; color: var(--text-muted)"
+            >SARAN TINDAKAN:</strong
+          >
+          <p id="sar" style="margin: 5px 0 0 0; color: #334155"></p>
+        </div>
+        <button
+          onclick="closeModal()"
+          style="background: var(--primary); color: #fff; box-shadow: none"
+        >
+          Kembali
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
